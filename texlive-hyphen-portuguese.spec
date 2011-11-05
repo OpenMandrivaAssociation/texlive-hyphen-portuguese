@@ -14,11 +14,10 @@ License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-portuguese.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
-Requires:	texlive-hyphen-base
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-hyphen-base
 Requires:	texlive-hyph-utf8
 Conflicts:	texlive-texmf <= 20110705-3
-Requires(post):	texlive-hyphen-base
 
 %description
 Hyphenation patterns for Portuguese in T1/EC and UTF-8
