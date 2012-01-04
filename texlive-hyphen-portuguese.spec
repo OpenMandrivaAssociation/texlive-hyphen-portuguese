@@ -45,13 +45,13 @@ encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese <<EOF
-%% from hyphen-portuguese:
+\%\% from hyphen-portuguese:
 portuguese loadhyph-pt.tex
 =portuges
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese <<EOF
-%% from hyphen-portuguese:
+\%\% from hyphen-portuguese:
 \addlanguage{portuguese}{loadhyph-pt.tex}{}{2}{3}
 \addlanguage{portuges}{loadhyph-pt.tex}{}{2}{3}
 EOF
