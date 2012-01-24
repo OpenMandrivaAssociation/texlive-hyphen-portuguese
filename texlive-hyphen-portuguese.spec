@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-portuguese
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Portuguese hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -45,16 +45,18 @@ encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese <<EOF
-\%\% from hyphen-portuguese:
+\%% from hyphen-portuguese:
 portuguese loadhyph-pt.tex
 =portuges
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese <<EOF
-\%\% from hyphen-portuguese:
+\%% from hyphen-portuguese:
 \addlanguage{portuguese}{loadhyph-pt.tex}{}{2}{3}
 \addlanguage{portuges}{loadhyph-pt.tex}{}{2}{3}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-portuguese <<EOF
 -- from hyphen-portuguese:
