@@ -1,11 +1,11 @@
-# revision 25628
+# revision 25990
 # category TLCore
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-portuguese
-Version:	20120327
+Version:	20120611
 Release:	1
 Summary:	Portuguese hyphenation patterns
 Group:		Publishing
@@ -48,8 +48,6 @@ cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese <<EOF
 \%% from hyphen-portuguese:
 portuguese loadhyph-pt.tex
 =portuges
-=brazil
-=brazilian
 EOF
 perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_def_d}
@@ -57,8 +55,6 @@ cat > %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese <<EOF
 \%% from hyphen-portuguese:
 \addlanguage{portuguese}{loadhyph-pt.tex}{}{2}{3}
 \addlanguage{portuges}{loadhyph-pt.tex}{}{2}{3}
-\addlanguage{brazil}{loadhyph-pt.tex}{}{2}{3}
-\addlanguage{brazilian}{loadhyph-pt.tex}{}{2}{3}
 EOF
 perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
@@ -68,7 +64,7 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-portuguese <<EOF
 		loader = 'loadhyph-pt.tex',
 		lefthyphenmin = 2,
 		righthyphenmin = 3,
-		synonyms = { 'portuges', 'brazil', 'brazilian' },
+		synonyms = { 'portuges' },
 		patterns = 'hyph-pt.pat.txt',
 		hyphenation = 'hyph-pt.hyp.txt',
 	},
