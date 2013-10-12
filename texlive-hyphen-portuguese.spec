@@ -1,11 +1,11 @@
-# revision 25990
+# revision 31125
 # category TLCore
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-portuguese
-Version:	20120611
+Version:	20131011
 Release:	1
 Summary:	Portuguese hyphenation patterns
 Group:		Publishing
@@ -48,6 +48,8 @@ cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese <<EOF
 \%% from hyphen-portuguese:
 portuguese loadhyph-pt.tex
 =portuges
+=brazil
+=brazilian
 EOF
 perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_def_d}
@@ -55,6 +57,8 @@ cat > %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese <<EOF
 \%% from hyphen-portuguese:
 \addlanguage{portuguese}{loadhyph-pt.tex}{}{2}{3}
 \addlanguage{portuges}{loadhyph-pt.tex}{}{2}{3}
+\addlanguage{brazil}{loadhyph-pt.tex}{}{2}{3}
+\addlanguage{brazilian}{loadhyph-pt.tex}{}{2}{3}
 EOF
 perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-portuguese
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
@@ -64,34 +68,8 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-portuguese <<EOF
 		loader = 'loadhyph-pt.tex',
 		lefthyphenmin = 2,
 		righthyphenmin = 3,
-		synonyms = { 'portuges' },
+		synonyms = { 'portuges', 'brazil', 'brazilian' },
 		patterns = 'hyph-pt.pat.txt',
 		hyphenation = 'hyph-pt.hyp.txt',
 	},
 EOF
-
-
-%changelog
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120611-1
-+ Revision: 804806
-- Update to latest release.
-
-* Tue Mar 27 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120327-1
-+ Revision: 787628
-- Update to latest release.
-
-* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120124-1
-+ Revision: 767572
-- Add workaround to rpm bug that broke hyphenation files
-
-* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
-+ Revision: 759932
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
-+ Revision: 718674
-- texlive-hyphen-portuguese
-- texlive-hyphen-portuguese
-- texlive-hyphen-portuguese
-- texlive-hyphen-portuguese
-
