@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-portuguese
 Version:	20131011
-Release:	2
+Release:	3
 Summary:	Portuguese hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
