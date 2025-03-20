@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-portuguese
-Version:	58609
-Release:	2
+Version:	74203
+Release:	1
 Summary:	Portuguese hyphenation patterns
 Group:		Publishing
 URL:		https://tug.org/texlive
